@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get well soon, Alae 🌸</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fff8f1;
+    --paper:#fffdfa;
+    --plum:#4a3144;
+    --blush:#f3aab8;
+    --lavender:#b6a4da;
+    --sage:#9dc2a4;
+    --gold:#f0c14b;
+    --line:#ecdfe6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(243,170,184,.18), transparent 35%),
+      radial-gradient(circle at 90% 20%, rgba(182,164,218,.18), transparent 35%),
+      radial-gradient(circle at 80% 90%, rgba(157,194,164,.16), transparent 40%);
+    color:var(--plum);
+    font-family:'Quicksand', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:600px;
+    margin:0 auto;
+    padding:4rem 1.5rem 5rem;
+  }
+  .hero{
+    text-align:center;
+    padding-bottom:2.5rem;
+  }
+  .bloom-stage{
+    width:140px;
+    height:140px;
+    margin:0 auto 1.2rem;
+  }
+  .bloom-stage svg{width:100%;height:100%;}
+  .petal{
+    transform-origin:70px 90px;
+    animation:open 2.6s ease-out forwards;
+  }
+  .petal:nth-child(1){animation-delay:.05s;}
+  .petal:nth-child(2){animation-delay:.18s;}
+  .petal:nth-child(3){animation-delay:.31s;}
+  .petal:nth-child(4){animation-delay:.44s;}
+  .petal:nth-child(5){animation-delay:.57s;}
+  @keyframes open{
+    from{transform:scale(.2) rotate(-8deg);opacity:0;}
+    to{transform:scale(1) rotate(0deg);opacity:1;}
+  }
+  .stem{
+    stroke-dasharray:60;
+    stroke-dashoffset:60;
+    animation:grow 1s ease-out .9s forwards;
+  }
+  @keyframes grow{to{stroke-dashoffset:0;}}
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2rem, 6vw, 2.9rem);
+    margin:0 0 .5rem;
+    letter-spacing:-.01em;
+  }
+  .hero p{
+    font-size:1.05rem;
+    color:#6b5468;
+    max-width:36ch;
+    margin:0 auto;
+  }
+
+  section{
+    margin-top:2.75rem;
+  }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:2rem 1.8rem;
+    box-shadow:0 18px 40px -28px rgba(74,49,68,.35);
+  }
+  .letter p{
+    margin:0 0 1.05rem;
+    font-size:1.02rem;
+  }
+  .letter p:last-child{margin-bottom:0;}
+  .signoff{
+    font-family:'Caveat', cursive;
+    font-size:1.7rem;
+    color:var(--blush);
+    display:block;
+    margin-top:.4rem;
+  }
+
+  h2{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.4rem;
+    margin:0 0 1.1rem;
+  }
+
+  .thoughts{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:.9rem;
+  }
+  .thoughts li{
+    display:flex;
+    gap:.8rem;
+    align-items:flex-start;
+    font-size:.98rem;
+  }
+  .dot{
+    flex:none;
+    width:9px;height:9px;
+    border-radius:50%;
+    margin-top:.5rem;
+  }
+  .thoughts li:nth-child(1) .dot{background:var(--blush);}
+  .thoughts li:nth-child(2) .dot{background:var(--lavender);}
+  .thoughts li:nth-child(3) .dot{background:var(--sage);}
+  .thoughts li:nth-child(4) .dot{background:var(--gold);}
+
+  .hug-zone{
+    text-align:center;
+    position:relative;
+  }
+  .hug-zone h2{text-align:center;}
+  .hug-zone p{color:#6b5468;font-size:.95rem;margin:0 0 1.4rem;}
+  button#hugBtn{
+    font-family:'Quicksand',sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    color:#fff;
+    background:linear-gradient(135deg, var(--blush), var(--lavender));
+    border:none;
+    padding:.9rem 1.9rem;
+    border-radius:999px;
+    cursor:pointer;
+    box-shadow:0 12px 28px -14px rgba(182,164,218,.7);
+    transition:transform .15s ease;
+  }
+  button#hugBtn:hover{transform:translateY(-2px);}
+  button#hugBtn:active{transform:translateY(0);}
+  button#hugBtn:focus-visible{outline:3px solid var(--sage);outline-offset:3px;}
+  .hug-note{
+    margin-top:1rem;
+    min-height:1.4rem;
+    font-family:'Caveat', cursive;
+    font-size:1.4rem;
+    color:var(--plum);
+    opacity:0;
+    transition:opacity .4s ease;
+  }
+  .hug-note.show{opacity:1;}
+  .floaters{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:visible;
+  }
+  .heart{
+    position:absolute;
+    bottom:60px;
+    font-size:1.3rem;
+    animation:float 2.2s ease-out forwards;
+  }
+  @keyframes float{
+    0%{transform:translateY(0) scale(.6);opacity:0;}
+    15%{opacity:1;}
+    100%{transform:translateY(-130px) scale(1.1);opacity:0;}
+  }
+
+  footer{
+    text-align:center;
+    margin-top:3.5rem;
+    font-size:.85rem;
+    color:#9a8699;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .petal, .stem, .heart{animation:none !important;opacity:1 !important;transform:none !important;stroke-dashoffset:0 !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="bloom-stage" aria-hidden="true">
+      <svg viewBox="0 0 140 140">
+        <line class="stem" x1="70" y1="95" x2="70" y2="135" stroke="#9dc2a4" stroke-width="4" stroke-linecap="round"/>
+        <g class="petal"><ellipse cx="70" cy="60" rx="16" ry="26" fill="#f3aab8"/></g>
+        <g class="petal" transform="rotate(72 70 90)"><ellipse cx="70" cy="60" rx="16" ry="26" fill="#f6bfc9"/></g>
+        <g class="petal" transform="rotate(144 70 90)"><ellipse cx="70" cy="60" rx="16" ry="26" fill="#b6a4da"/></g>
+        <g class="petal" transform="rotate(216 70 90)"><ellipse cx="70" cy="60" rx="16" ry="26" fill="#c6b7e2"/></g>
+        <g class="petal" transform="rotate(288 70 90)"><ellipse cx="70" cy="60" rx="16" ry="26" fill="#f3aab8"/></g>
+        <circle cx="70" cy="90" r="12" fill="#f0c14b"/>
+      </svg>
+    </div>
+    <h1>Get well soon, Alae</h1>
+    <p>Just a small, soft corner of the internet made to cheer you up while you rest.</p>
+  </div>
+
+  <section class="letter">
+    <div class="card">
+      <h2>A little note for you</h2>
+      <p>I heard you haven't been feeling well, and I wanted to make something to remind you that you're thought of, even on the days that feel slow and heavy.</p>
+      <p>Being sick is tiring in a way that's hard to explain — your body is working hard, even when it doesn't feel like it. So be gentle with yourself today. Rest counts as doing something.</p>
+      <p>Wishing you warm tea, soft blankets, and days that get brighter from here.</p>
+      <span class="signoff">Feel better soon 💛</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>A few gentle reminders</h2>
+      <ul class="thoughts">
+        <li><span class="dot"></span>It's okay to do absolutely nothing today. Your only job is to rest.</li>
+        <li><span class="dot"></span>This feeling is temporary — your strength is already working on bringing you back.</li>
+        <li><span class="dot"></span>The people around you are glad to help, so let them.</li>
+        <li><span class="dot"></span>You are missed, and things will feel lighter again soon.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hug-zone">
+    <div class="card" style="position:relative;">
+      <h2>Need a little boost?</h2>
+      <p>Tap below for a small virtual hug.</p>
+      <button id="hugBtn">Send me a hug 🤍</button>
+      <div class="hug-note" id="hugNote">sending warmth your way...</div>
+      <div class="floaters" id="floaters" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer>made with care, for Alae</footer>
+</div>
+
+<script>
+  const btn = document.getElementById('hugBtn');
+  const note = document.getElementById('hugNote');
+  const floaters = document.getElementById('floaters');
+  const hearts = ['💗','💛','🌸','✨'];
+  let noteTimeout;
+
+  btn.addEventListener('click', () => {
+    note.classList.add('show');
+    clearTimeout(noteTimeout);
+    noteTimeout = setTimeout(() => note.classList.remove('show'), 2200);
+
+    for (let i = 0; i < 6; i++) {
+      const h = document.createElement('span');
+      h.className = 'heart';
+      h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      h.style.left = (20 + Math.random() * 60) + '%';
+      h.style.animationDelay = (Math.random() * 0.3) + 's';
+      floaters.appendChild(h);
+      setTimeout(() => h.remove(), 2600);
+    }
+  });
+</script>
+</body>
+</html>
